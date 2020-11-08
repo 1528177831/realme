@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>包邮</title>
+    <desc>Created with Sketch.</desc>
+    <g id="包邮" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="椭圆形" stroke="#000000" stroke-width="2" cx="20" cy="20" r="16"></circle>
+        <circle id="椭圆形" stroke="#000000" stroke-width="2" cx="20" cy="20" r="11"></circle>
+        <polygon id="¥" fill="#000000" fill-rule="nonzero" points="15.376 14.576 17.488 14.576 20 19.488 22.512 14.576 24.624 14.576 21.504 20.192 23.632 20.192 23.632 21.184 20.944 21.184 20.928 21.2 20.928 22.576 23.632 22.576 23.632 23.568 20.928 23.568 20.928 26 19.072 26 19.072 23.568 16.384 23.568 16.384 22.576 19.072 22.576 19.072 21.2 19.056 21.184 16.384 21.184 16.384 20.192 18.496 20.192"></polygon>
+    </g>
+</svg>

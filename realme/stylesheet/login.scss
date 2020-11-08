@@ -1,0 +1,450 @@
+html,
+body,
+#id {
+  height: 100%;
+}
+
+input,
+textarea {
+  appearance: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+#app {
+  .index {
+    background-image: url("../images/heytap_bg.png");
+    height: 100%;
+
+    .header {
+      background: transparent;
+      box-sizing: border-box;
+      display: block;
+      font-size: 16px;
+      height: 78px;
+      line-height: 78px;
+      padding: 0 65px;
+      position: relative;
+      width: 100%;
+
+      a {
+        color: #7f7f7f;
+        font-size: 14px;
+        height: 78px;
+        line-height: 78px;
+        margin-right: 27px;
+      }
+
+      a.header_faq {
+        color: #7f7f7f !important;
+        cursor: pointer;
+        float: right;
+        font-size: 14px;
+        margin-right: 27px;
+      }
+
+      .header_wrap {
+        height: 100%;
+        margin: 0 auto;
+        max-width: 894px;
+        min-width: 800px;
+
+        .header_language {
+          color: #7f7f7f;
+          cursor: pointer;
+          float: right;
+          font-size: 14px;
+          position: relative;
+          text-align: center;
+
+          .ic_down {
+            border: 5px solid transparent;
+            border-top-color: #7f7f7f;
+            display: inline-block;
+            height: 0;
+            margin-bottom: -1px;
+            margin-left: 10px;
+            width: 0;
+          }
+
+          .checkbox {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #d3d3d3;
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            top: 60px;
+            width: 110px;
+            z-index: 20;
+          }
+        }
+      }
+    }
+
+    .box {
+      border: none;
+      border-radius: 0;
+      box-sizing: border-box;
+      margin: 0 auto 44px;
+      width: 800px;
+      position: relative;
+      background: transparent;
+
+      .box_header {
+        display: block;
+        height: 82px;
+
+        .box_header_logo {
+          background: url("../images/realme_logo.png") no-repeat 50%;
+          background-size: contain;
+          height: 33px;
+          margin: 45px auto 15px;
+        }
+
+        p {
+          display: none;
+        }
+      }
+
+      .box_content {
+        .index_content {
+          background: #fff;
+          border-radius: 8px;
+          margin: 0 auto;
+          min-height: 375px;
+          padding-top: 50px;
+          position: relative;
+          width: 380px;
+
+          .tab {
+            color: #000;
+            font-weight: 500;
+            margin: 0 auto 30px;
+            text-align: center;
+            width: 320px;
+
+            .tab_item.active {
+              font-size: 26px;
+              line-height: 37px;
+              position: relative;
+            }
+          }
+        }
+
+        .tabloginway {
+          margin: 0 auto;
+          overflow: hidden;
+          width: 300px;
+
+          div {
+            color: rgba(0, 0, 0, .5);
+            cursor: pointer;
+            float: left;
+            font-size: 16px;
+            position: relative;
+            text-align: center;
+            width: 50%;
+
+            p.on {
+              border-bottom: 2px solid #ffc915;
+              display: inline-block;
+              padding-bottom: 10px;
+              color: #000;
+            }
+          }
+
+        }
+
+        .zoneInput {
+          width: 300px;
+          margin: 9px auto;
+          position: relative;
+          margin-top: 20px;
+
+          .input_zone {
+            background-color: #f7f7f7;
+            border-bottom-left-radius: 9px;
+            border-top-left-radius: 9px;
+            box-sizing: border-box;
+            display: none;
+            font-size: 12px;
+            height: 45px;
+            left: 0;
+            line-height: 45px;
+            padding-right: 22px;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 77px;
+            z-index: 10;
+          }
+
+          input {
+            background: #f7f7f7;
+            border-radius: 9px;
+            box-sizing: border-box;
+            color: #000;
+            display: block;
+            font-size: 12px;
+            height: 45px;
+            line-height: 1px;
+            margin: 0 auto;
+            text-indent: 16px;
+            width: 100%;
+          }
+        }
+
+        .voicelogin {
+          width: 300px;
+          margin: 9px auto;
+          position: relative;
+          margin-top: 20px;
+
+          .codes {
+            display: none;
+
+            .input_code.disabled {
+              cursor: not-allowed;
+              background-color: #e9e9e9;
+              border-color: #e9e9e9;
+              color: #9b9b9b;
+              opacity: 1;
+            }
+
+            .input_code {
+              border: 1px solid #2ad181;
+              border-radius: 9px;
+              box-sizing: border-box;
+              color: #fff;
+              cursor: pointer;
+              flex-shrink: 0;
+              font-size: 12px;
+              font-weight: 500;
+              height: 45px;
+              line-height: 45px;
+              min-width: 90px;
+              padding: 0 8px;
+              text-align: center;
+              transition: .1s;
+              width: auto;
+            }
+          }
+
+          .codeWrap {
+            .inputBox {
+              input {
+                margin-right: 5px;
+              }
+            }
+          }
+
+          .password {
+            display: block;
+
+            .voice_btn {
+              overflow: hidden;
+              position: relative;
+
+              .forgetpwd {
+                display: inline-block;
+                margin-top: 9px;
+                color: rgba(0, 0, 0, .6);
+                font-size: 12px;
+                line-height: 17px;
+                cursor: pointer;
+              }
+
+              .forgetpwd:hover {
+                font-weight: 700;
+              }
+            }
+          }
+
+          .input {
+            margin: 9px auto;
+            margin-bottom: 26px;
+            position: relative;
+            width: 100%;
+
+            input {
+              background: #f7f7f7;
+              border-radius: 9px;
+              box-sizing: border-box;
+              color: #000;
+              display: block;
+              flex-grow: 1;
+              font-size: 12px;
+              height: 45px;
+              line-height: 1;
+              margin: 0 auto;
+              min-width: 0;
+              text-indent: 16px;
+              width: 100%;
+            }
+
+            .inputBox {
+              display: flex;
+            }
+
+          }
+
+          .codelogin {
+            display: none;
+          }
+
+          .passlogin {
+            display: block;
+          }
+
+          .linkContainer {
+            display: flex;
+            justify-content: space-between;
+
+            .link {
+              color: #ffc915;
+              font-size: 12px;
+              line-height: 17px;
+              cursor: pointer;
+            }
+
+            .link.privacy {
+              color: rgba(0, 0, 0, .6);
+            }
+
+            .link:hover {
+              font-weight: 700;
+            }
+          }
+        }
+
+        .authOther {
+          margin: 20px auto;
+          text-align: center;
+
+          .authOther_list {
+            color: #9b9b9b;
+            font-size: 12px;
+            line-height: 1;
+            margin: 0 auto;
+            position: relative;
+            width: 72px;
+          }
+
+          .authOther_list::after {
+            content: "";
+            height: 1px;
+            position: absolute;
+            top: 7px;
+            background: #000;
+            right: -114px;
+            opacity: .08;
+            width: 99px;
+          }
+
+          .authOther_list::before {
+            content: "";
+            height: 1px;
+            position: absolute;
+            top: 7px;
+            background: #000;
+            left: -114px;
+            opacity: .08;
+            width: 99px;
+          }
+
+          .authOther_links {
+            margin: 15px auto 0;
+            padding-bottom: 39px;
+
+            .authOther_link {
+              cursor: pointer;
+              display: inline-block;
+              height: 29px;
+              margin: 0 7px;
+              width: 33px;
+            }
+
+            .authOther_ico_qq {
+              background: url("../images/icon_qq.png") no-repeat 50%;
+              background-size: contain;
+            }
+
+            .authOther_ico_wx {
+              background: url("../images/icon_wx.png") no-repeat 50%;
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 72px;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+
+  .service_text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    opacity: .55;
+  }
+
+  p {
+    opacity: .3;
+    color: #000;
+
+    span {
+      font-size: 12px;
+      margin-left: 5px;
+    }
+  }
+
+}
+
+.index .index_content .button,
+.index .index_content .input,
+.index .index_content .linkContainer,
+.index .index_content .zoneInput {
+  width: 300px;
+}
+
+.button {
+  border: none;
+  border-radius: 9px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  height: 45px;
+  line-height: 45px;
+  margin: 9px auto;
+  outline: none;
+  position: relative;
+  text-align: center;
+  transition: .1s;
+  white-space: nowrap;
+  width: 342px;
+}
+
+.button.realme.primary_btn {
+  background-color: #ffc915;
+  color: #000;
+}
+
+.button.realme.primary_btn:hover {
+  filter: brightness(.85)
+}
