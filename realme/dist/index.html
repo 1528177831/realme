@@ -98,7 +98,7 @@
     </div>
   </header>
   <section class="banner-swiper">
-    <div class="swiper-container" id="bannerSwiper">
+    <div class="swiper-container swiper-container-horizontal" id="bannerSwiper">
       <div class="swiper-wrapper" style="
         transform: translate3d(-100%, 0, 0);">
         <div class="swiper-slide">
@@ -118,7 +118,6 @@
                     <img class="svg-lazyload" data-src="https://r1.realme.net/general/20200222/1582386842375.svg"
                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                       alt="真我 X50 Pro 5G">
-
                   </div>
                   <!-- banner subtitle -->
                   <div class="banner-subtitle ">65W新闪充，3分钟回血
@@ -402,9 +401,16 @@
           </div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-dark">
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+      </div>
+      <div class="swiper-button-prev swiper-button-light"></div>
+      <div class="swiper-button-next swiper-button-light"></div>
     </div>
   </section>
   <div class="banner banner-product">
