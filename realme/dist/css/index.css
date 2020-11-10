@@ -136,7 +136,8 @@ img {
       overflow: hidden; }
       .banner .banner-image .banner-lazyload img {
         width: 1920px;
-        transform: translate(-15%, 0); }
+        margin-left: 50%;
+        transform: translate(-50%, 0); }
   .banner .banner-container {
     top: 190px;
     position: absolute;
@@ -374,7 +375,8 @@ img {
       overflow: hidden; }
       .brand .brand-image .pic-lazyloaded img {
         width: 1920px;
-        transform: translate(-15%, 0); }
+        margin-left: 50%;
+        transform: translate(-50%, 0); }
   .brand .brand-content {
     position: absolute;
     top: 240px;

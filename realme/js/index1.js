@@ -4,20 +4,36 @@ define(['jquery'], function ($) {
       var oUser = $(".header").find(".nav-right")
       var oAccount = $(".header").find(".header-account")
       var oPanel = $(".header .header-account").find(".header-account-panel");
-      var oLi = $(".header .nav .nav-menu").find(".active");
-      console.log(oLi.length);
-      var oSubmenu = $(".header .nav .nav-menu").find(".nav-submenu");
-      oUser.mouseover(function () {
+      var oHeader = $('.header');
+      oUser.mouseenter(function () {
         oAccount.css("display", "block");
       });
       oPanel.mouseleave(function () {
         oAccount.css("display", "none");
       });
 
-      oLi.mouseover(function () {
-        oSubmenu.removeClass('visible')
-          .eq(oLi.index(this))
-          .addClass('visible');
+      $('.header .nav .nav-menu').on('mouseenter', '.active', function () {
+        var index = $(this).index();
+        if (index > 0 && index < 3) {
+          $(this).find('.nav-submenu').addClass('visible').parent('.active').siblings('.active').find('.nav-submenu').removeClass('visible');
+          $('.nav-submenu-panel').addClass('visible');
+        } else {
+          $('.active').find('.nav-submenu').removeClass('visible');
+          $('.nav-submenu-panel').removeClass('visible');
+        }
+      })
+      $('.header').mouseleave(function () {
+        $('.nav-submenu').removeClass('visible');
+        $('.nav-submenu-panel').removeClass('visible');
+      })
+
+      $(window).scroll(function () {
+        var scrollTop = document.documentElement.scrollTop;
+        if (scrollTop > 0) {
+          oHeader.addClass('header-fixed');
+        } else {
+          oHeader.removeClass('header-fixed');
+        }
       })
     })
   }

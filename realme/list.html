@@ -9,82 +9,302 @@
   <link type="text/css" rel="stylesheet" href="./css/reset.min.css">
   <link type="text/css" rel="stylesheet" href="./css/index1.min.css">
   <link type="text/css" rel="stylesheet" href="./css/list.min.css">
+  <script src="./js/require.js" async='true' defer data-main="js/main"></script>
 </head>
 
 <body>
   <header class="header">
+    <div class="header-account" style="display: none;">
+      <div class="header-account-panel">
+        <ul>
+          <li class="header-item">
+            <a href="http://localhost:8888/cart.html" id="cart" title="Cart"><span
+                class="icon icon-cart"></span>购物车&nbsp;<span id="account-cart"></span></a>
+          </li>
+          <li class="header-item">
+            <a href="https://id.realme.com?callback=https://buy.realme.com/cn/orders"><span
+                class="icon icon-order"></span>我的订单</a>
+          </li>
+          <li class="header-item">
+            <a href="https://id.realme.com?callback=https://buy.realme.com/cn/reviews" title="评价"><span
+                class="icon icon-reviews"></span>我的评价</a>
+          </li>
+          <li class="header-item">
+            <a href="https://id.realme.com?callback=https://buy.realme.com/cn/coupons" title="优惠券"><span
+                class="icon icon-coupon"></span>优惠券</a>
+          </li>
+          <li class="header-item">
+            <a href="https://id.realme.com?callback=https://id.realme.com/profile.html"><span
+                class="icon icon-userinfo"></span>账户信息</a>
+          </li>
+          <li class="header-item">
+            <a href="https://id.realme.com?callback=https://buy.realme.com/cn/address"><span
+                class="icon icon-address"></span>我的地址</a>
+          </li>
+          <li class="header-item">
+            <a href="http://localhost:8888/login.html" id="accountLogin"><span
+                class="icon icon-register"></span><label>登录</label></a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="wrapper">
-      <a href="" class="menu">
-        <span class="icon icon-menu"></span>
-      </a>
       <a href="" class="logo" title="realme">
         <span class="icon icon-logo"></span>
       </a>
       <nav class="nav">
         <ul class="nav-menu">
-          <li>
+          <li class="active">
             <a href="">真我Q2 Pro</a>
           </li>
-          <li>
-            <a href="">手机</a>
-            <!-- <div class="nav-submenu">
+          <li class="active">
+            <a href="javascript:;">手机</a>
+            <div class="nav-submenu">
               <div class="nav-submenu-wrapper">
                 <ul class="pingfang">
                   <li>
                     <a href="" title="真我Q2 pro">
                       <div class="nav-submenu-img">
                         <label for="">新品</label>
-                        <img src="" alt="真我Q2 pro">
+                        <img src="https://r1.realme.net/general/20201012/1602506497125.png" alt="真我Q2 pro">
                       </div>
                       <div class="nav-submenu-info">
                         <span class="nav-submenu-type">新品</span>
                         <span class="nav-submenu-title">真我Q2 pro</span>
                         <span class="nav-submenu-price">
-                          "¥1599"
-                          <i>起</i>>
+                          ¥1599
+                          <i>起</i>
                         </span>
                       </div>
                     </a>
                   </li>
-                </ul>
-              </div>
-            </div> -->
-          </li>
-          <li>
-            <a href="">配件</a>
-            <!-- <div class="nav-submenu">
-              <div class="nav-submenu-wrapper">
-                <ul class="pingfang">
                   <li>
                     <a href="" title="真我Q2 pro">
                       <div class="nav-submenu-img">
                         <label for="">新品</label>
-                        <img src="" alt="真我Q2 pro">
+                        <img src="https://r1.realme.net/general/20201012/1602506497125.png" alt="真我Q2 pro">
                       </div>
                       <div class="nav-submenu-info">
                         <span class="nav-submenu-type">新品</span>
                         <span class="nav-submenu-title">真我Q2 pro</span>
                         <span class="nav-submenu-price">
-                          "¥1599"
-                          <i>起</i>>
+                          ¥1599
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2 pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201012/1602506497125.png" alt="真我Q2 pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2 pro</span>
+                        <span class="nav-submenu-price">
+                          ¥1599
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2 pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201012/1602506497125.png" alt="真我Q2 pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2 pro</span>
+                        <span class="nav-submenu-price">
+                          ¥1599
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2 pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201012/1602506497125.png" alt="真我Q2 pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2 pro</span>
+                        <span class="nav-submenu-price">
+                          ¥1599
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2 pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201012/1602506497125.png" alt="真我Q2 pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2 pro</span>
+                        <span class="nav-submenu-price">
+                          ¥1599
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="">
+                      <div class="nav-submenu-img">
+                        <label for="">&nbsp;</label>
+                        <img src="https://r1.realme.net/general/20191015/1571120230019.png">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">&nbsp;</span>
+                        <span class="nav-submenu-title">更多</span>
+                        <span class="nav-submenu-price">
                         </span>
                       </div>
                     </a>
                   </li>
                 </ul>
               </div>
-            </div> -->
+            </div>
           </li>
-          <li>
+          <li class="active">
+            <a href="javascript:;">配件</a>
+            <div class="nav-submenu">
+              <div class="nav-submenu-wrapper">
+                <ul class="pingfang">
+                  <li>
+                    <a href="" title="真我Q2Buds Air pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201013/1602561178382.png" alt="真我Q2Buds Air pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2Buds Air pro</span>
+                        <span class="nav-submenu-price">
+                          ¥499
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2Buds Air pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201013/1602561178382.png" alt="真我Q2Buds Air pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2Buds Air pro</span>
+                        <span class="nav-submenu-price">
+                          ¥499
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2Buds Air pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201013/1602561178382.png" alt="真我Q2Buds Air pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2Buds Air pro</span>
+                        <span class="nav-submenu-price">
+                          ¥499
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2Buds Air pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201013/1602561178382.png" alt="真我Q2Buds Air pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2Buds Air pro</span>
+                        <span class="nav-submenu-price">
+                          ¥499
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2Buds Air pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201013/1602561178382.png" alt="真我Q2Buds Air pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2Buds Air pro</span>
+                        <span class="nav-submenu-price">
+                          ¥499
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="真我Q2Buds Air pro">
+                      <div class="nav-submenu-img">
+                        <label for="">新品</label>
+                        <img src="https://r1.realme.net/general/20201013/1602561178382.png" alt="真我Q2Buds Air pro">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">新品</span>
+                        <span class="nav-submenu-title">真我Q2Buds Air pro</span>
+                        <span class="nav-submenu-price">
+                          ¥499
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" title="">
+                      <div class="nav-submenu-img">
+                        <label for="">&nbsp;</label>
+                        <img src="https://r1.realme.net/general/20191015/1571120230019.png">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">&nbsp;</span>
+                        <span class="nav-submenu-title">更多</span>
+                        <span class="nav-submenu-price">
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="active">
             <a href="">品牌</a>
           </li>
-          <li>
+          <li class="active">
             <a href="">服务</a>
           </li>
-          <li>
+          <li class="active">
             <a href="">社区</a>
           </li>
-          <li>
+          <li class="active">
             <a href="">APP</a>
           </li>
         </ul>
@@ -106,9 +326,9 @@
       <div class="realme-phone-tabs-fixed" id="tabs">
         <div class="wrapper">
           <ul>
-            <li><a href="#" class="active" title="全部商品">全部商品</a></li>
-            <li><a href="#" class="active" title="手机">手机</a></li>
-            <li><a href="#" class="active" title="配件 & 周边">配件 & 周边</a></li>
+            <li><a href="javascript:;" class="active" style="color: #fbbd0f;" title="全部商品">全部商品</a></li>
+            <li><a href="javascript:;" class="active" title="手机">手机</a></li>
+            <li><a href="javascript:;" class="active" title="配件 & 周边">配件 & 周边</a></li>
           </ul>
         </div>
       </div>
@@ -725,6 +945,7 @@
         </div>
       </div>
     </footer>
+    <div class="nav-submenu-panel"></div>
 </body>
 
 </html>

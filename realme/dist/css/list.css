@@ -32,6 +32,13 @@
             width: 200px;
             text-align: center;
             font-size: 14px; }
+    .realme-phones .realme-phones-tabs .realme-phone-tabs-fixed.fixed {
+      position: fixed;
+      top: 0;
+      z-index: 10;
+      background: #fff;
+      margin-top: 0;
+      margin-bottom: 0; }
   .realme-phones .realme-phones-group .wrapper .realme-phones-group-banner {
     height: 160px;
     background: #fff;
@@ -78,6 +85,17 @@
             line-height: 24px;
             color: #d0021b;
             margin-top: 7px; }
+          .realme-phones .realme-phones-group .wrapper .realme-phones-list ul li a .realme-phones-colors {
+            display: flex;
+            justify-content: center;
+            margin-top: 26px; }
+            .realme-phones .realme-phones-group .wrapper .realme-phones-list ul li a .realme-phones-colors span {
+              margin: 0 5px;
+              width: 12px;
+              height: 12px;
+              border-radius: 12px;
+              position: relative;
+              display: block; }
       .realme-phones .realme-phones-group .wrapper .realme-phones-list ul li:hover {
         box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.06);
         transform: translate3d(0, -2px, 0); }
