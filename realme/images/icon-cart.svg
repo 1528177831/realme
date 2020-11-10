@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon/ic_Cart</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/ic_Cart" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="分组" transform="translate(3.000000, 7.000000)">
+            <polyline id="直线" stroke="#000000" stroke-width="1.5" points="0.501525879 0 5.04039681 0 7.63005011 13.5 18.9576146 13.5 21.5848592 4.18566425 6.09131981 4.18566425"></polyline>
+            <rect id="矩形" fill="#000000" x="9.16666667" y="0" width="11" height="1.5"></rect>
+            <ellipse id="椭圆形" fill="#000000" cx="8.70833333" cy="16.65" rx="1.375" ry="1.35"></ellipse>
+            <ellipse id="椭圆形" fill="#000000" cx="17.875" cy="16.65" rx="1.375" ry="1.35"></ellipse>
+        </g>
+    </g>
+</svg>

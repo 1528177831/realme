@@ -1,8 +1,13 @@
+body {
+  overflow-x: hidden; }
+
 ::-webkit-scrollbar {
   display: none; }
 
 img {
-  width: 100%; }
+  width: 100%;
+  padding: 0;
+  border: 0; }
 
 .plate-hover {
   transform: translate3d(0, 0, 0);
@@ -14,6 +19,11 @@ img {
 
 .banner-swiper {
   margin-bottom: 20px; }
+  .banner-swiper .banner {
+    margin-bottom: 0;
+    height: 650px;
+    text-align: center;
+    position: relative; }
   .banner-swiper .swiper-container {
     margin: 0 auto;
     position: relative;
@@ -60,10 +70,14 @@ img {
     background-color: rgba(0, 0, 0, 0);
     border-radius: 50%;
     outline: 0; }
-  .banner-swiper .swiper-button-light {
-    background-image: url("../images/icon-next-white.svg"); }
   .banner-swiper .swiper-button-prev:hover,
   .banner-swiper .swiper-button-next:hover {
+    background-image: url("../images/icon-next.svg");
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.15); }
+  .banner-swiper .swiper-button-light {
+    background-image: url("../images/icon-next-white.svg"); }
+  .banner-swiper .swiper-button-light:hover {
     background-image: url("../images/icon-next-white.svg");
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.15); }
@@ -84,8 +98,12 @@ img {
 .banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet {
   background: rgba(74, 74, 74, 0.3); }
 
-.banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet-active {
-  background: #fff; }
+.banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet:first-child.swiper-pagination-bullet-active,
+.banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet:last-child.swiper-pagination-bullet-active {
+  background-color: #fff; }
+
+.banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #4a4a4a; }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer; }
@@ -107,14 +125,18 @@ img {
   margin-top: -22px; }
 
 .banner {
-  margin-bottom: 0;
   height: 650px;
-  text-align: center;
-  position: relative; }
-  .banner .banner-image img {
-    width: 1920px;
-    margin-left: 50%;
-    transform: translate(-50%, 0); }
+  margin-bottom: 20px; }
+  .banner .banner-image {
+    display: block;
+    width: 100%; }
+    .banner .banner-image .banner-lazyload {
+      display: block;
+      width: 100%;
+      overflow: hidden; }
+      .banner .banner-image .banner-lazyload img {
+        width: 1920px;
+        transform: translate(-15%, 0); }
   .banner .banner-container {
     top: 190px;
     position: absolute;
@@ -343,10 +365,16 @@ img {
 .brand {
   position: relative;
   margin-bottom: 20px; }
-  .brand .brand-image .pic-lazyloaded img {
-    width: 1920px;
-    margin-left: 50%;
-    transform: translate(-50%, 0); }
+  .brand .brand-image {
+    display: block;
+    width: 100%; }
+    .brand .brand-image .pic-lazyloaded {
+      display: block;
+      width: 100%;
+      overflow: hidden; }
+      .brand .brand-image .pic-lazyloaded img {
+        width: 1920px;
+        transform: translate(-15%, 0); }
   .brand .brand-content {
     position: absolute;
     top: 240px;

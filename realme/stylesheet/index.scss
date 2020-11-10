@@ -1,11 +1,17 @@
 @charset "utf-8";
 
+body {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
 
 img {
   width: 100%;
+  padding: 0;
+  border: 0;
 }
 
 .plate-hover {
@@ -20,6 +26,13 @@ img {
 
 .banner-swiper {
   margin-bottom: 20px;
+
+  .banner {
+    margin-bottom: 0;
+    height: 650px;
+    text-align: center;
+    position: relative;
+  }
 
   .swiper-container {
     margin: 0 auto;
@@ -79,12 +92,18 @@ img {
     outline: 0;
   }
 
-  .swiper-button-light{
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background-image: url("../images/icon-next.svg");
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .15);
+  }
+
+  .swiper-button-light {
     background-image: url("../images/icon-next-white.svg");
   }
 
-  .swiper-button-prev:hover,
-  .swiper-button-next:hover {
+  .swiper-button-light:hover {
     background-image: url("../images/icon-next-white.svg");
     opacity: 1;
     background-color: rgba(0, 0, 0, .15);
@@ -112,8 +131,13 @@ img {
   background: rgba(74, 74, 74, .3);
 }
 
-.banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet-active {
-  background: #fff;
+.banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet:first-child.swiper-pagination-bullet-active,
+.banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet:last-child.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+
+.banner-swiper .swiper-pagination.swiper-pagination-dark .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #4a4a4a;
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
@@ -139,16 +163,22 @@ img {
 }
 
 .banner {
-  margin-bottom: 0;
   height: 650px;
-  text-align: center;
-  position: relative;
+  margin-bottom: 20px;
 
   .banner-image {
-    img {
-      width: 1920px;
-      margin-left: 50%;
-      transform: translate(-50%, 0);
+    display: block;
+    width: 100%;
+
+    .banner-lazyload {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        width: 1920px;
+        transform: translate(-15%, 0);
+      }
     }
   }
 
@@ -492,11 +522,18 @@ img {
   margin-bottom: 20px;
 
   .brand-image {
+    display: block;
+    width: 100%;
+
     .pic-lazyloaded {
+
+      display: block;
+      width: 100%;
+      overflow: hidden;
+
       img {
         width: 1920px;
-        margin-left: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(-15%, 0);
       }
     }
   }

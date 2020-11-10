@@ -36,19 +36,13 @@ gulp.task('data', function() {
     .pipe(connect.reload());
 })
 
-var uglify = require('gulp-uglify');
 gulp.task('scripts', function() {
   return gulp.src('./js/*.js')
-    .pipe(gulp.dest('dist/js'))
-    .pipe(uglify())
-    .pipe(rename(function(path) {
-      path.basename += '.min'
-    }))
     .pipe(gulp.dest('dist/js'))
     .pipe(connect.reload());
 })
 
-gulp.task('build', ['copy-html', 'scss', 'images', 'data', 'scripts'], () => {
+gulp.task('build', ['copy-html', 'scss', 'images', 'data', 'scripts'],  function() {
   console.log('项目建立成功');
 })
 
