@@ -37,7 +37,63 @@ define(['jquery'], function ($) {
       })
     })
   }
+
+  function navList() {
+    $(function () {
+      $.ajax({
+        type: "get",
+        url: "data/list.json",
+        dataType: "json",
+        success: function (arr) {
+          var phone = arr[0].phone;
+          for (var i = 0; i < phone.length; i++) {
+            var node = $(`<li>
+                    <a href="goods.html?skuId=${phone[i].skuId}" title="${phone[i].productname}">
+                      <div class="nav-submenu-img">
+                        <label for="">${phone[i].type}</label>
+                        <img src="${phone[i].img}" alt="${phone[i].productname}">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">${phone[i].type}</span>
+                        <span class="nav-submenu-title">${phone[i].productname}</span>
+                        <span class="nav-submenu-price">
+                          ${phone[i].nowPrice}
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>`);
+            $(".nav-menu .phones ul").prepend(node);
+          }
+          var other = arr[0].other;
+          for (var i = 0; i < other.length; i++) {
+            var node = $(`<li>
+                    <a href="goods.html?skuId=${other[i].skuId}" title="${other[i].productname}">
+                      <div class="nav-submenu-img">
+                        <label for="">${other[i].type}</label>
+                        <img src="${other[i].img}" alt="${other[i].productname}">
+                      </div>
+                      <div class="nav-submenu-info">
+                        <span class="nav-submenu-type">${other[i].type}</span>
+                        <span class="nav-submenu-title">${other[i].productname}</span>
+                        <span class="nav-submenu-price">
+                          ${other[i].nowPrice}
+                          <i>起</i>
+                        </span>
+                      </div>
+                    </a>
+                  </li>`);
+            $(".nav-menu .others ul").prepend(node);
+          }
+        },
+        error: function () {
+          alert(error)
+        }
+      });
+    })
+  }
   return {
-    index1
+    index1,
+    navList
   }
 })

@@ -270,8 +270,7 @@ a.disabled {
         padding: 0 20px;
         box-sizing: border-box; }
         .goods-detail .goods-basic .limit-notice .notice-content .countdown-price {
-          display: flex;
-          align-items: baseline; }
+          display: flex; }
           .goods-detail .goods-basic .limit-notice .notice-content .countdown-price p {
             color: #fe122f;
             font-size: 12px;
@@ -281,10 +280,6 @@ a.disabled {
               font-size: 14px; }
             .goods-detail .goods-basic .limit-notice .notice-content .countdown-price p span:nth-of-type(2) {
               font-size: 24px; }
-          .goods-detail .goods-basic .limit-notice .notice-content .countdown-price s {
-            margin-left: .08rem;
-            font-size: .14rem;
-            color: #9e6161; }
         .goods-detail .goods-basic .limit-notice .notice-content .countdown-time {
           display: flex;
           align-items: center; }

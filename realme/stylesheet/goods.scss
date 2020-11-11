@@ -349,7 +349,6 @@ a.disabled {
 
         .countdown-price {
           display: flex;
-          align-items: baseline;
 
           p {
             color: #fe122f;
@@ -364,12 +363,6 @@ a.disabled {
             span:nth-of-type(2) {
               font-size: 24px;
             }
-          }
-
-          s {
-            margin-left: .08rem;
-            font-size: .14rem;
-            color: #9e6161;
           }
         }
 

@@ -199,30 +199,35 @@ define(['jquery'], function ($) {
 
   function scroll() {
     $(function () {
+      $('.realme-phones-tabs .wrapper ul li').hover(function () {
+        $('.realme-phones-tabs .wrapper ul').find('.active').eq($(this).index()).css('color', '#fbbd0f');
+      }, function () {
+        $('.realme-phones-tabs .wrapper ul').find('.active').eq($(this).index()).css('color', '#000');
+      })
       $(window).scroll(function () {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         if (scrollTop > 524) {
-          $('.realme-phones .realme-phones-tabs .wrapper ul').find('.active').eq(0).css('color', '#000').parents('.realme-phone-tabs-fixed').addClass('fixed');
-          $('.realme-phones .realme-phones-tabs .wrapper ul').find('.active').eq(1).css('color', '#fbbd0f');
-          if (scrollTop > 2664) {
-            $('.realme-phones .realme-phones-tabs .wrapper ul').find('.active').eq(2).css('color', '#fbbd0f');
-            $('.realme-phones .realme-phones-tabs .wrapper ul').find('.active').eq(1).css('color', '#000')
+          $('.realme-phones-tabs .wrapper ul').find('.active').eq(0).css('color', '#000').parents('.realme-phone-tabs-fixed').addClass('fixed');
+          $('.realme-phones-tabs .wrapper ul').find('.active').eq(1).css('color', '#fbbd0f');
+          if (scrollTop > 996) {
+            $('.realme-phones-tabs .wrapper ul').find('.active').eq(2).css('color', '#fbbd0f');
+            $('.realme-phones-tabs .wrapper ul').find('.active').eq(1).css('color', '#000')
           } else {
-            $('.realme-phones .realme-phones-tabs .wrapper ul').find('.active').eq(2).css('color', '#000');
+            $('.realme-phones-tabs .wrapper ul').find('.active').eq(2).css('color', '#000');
           }
         } else {
-          $('.realme-phones .realme-phones-tabs .wrapper ul').find('.active').eq(0).css('color', '#fbbd0f').parents('.realme-phone-tabs-fixed').removeClass('fixed');
-          $('.realme-phones .realme-phones-tabs .wrapper ul').find('.active').eq(1).css('color', '#000');
+          $('.realme-phones-tabs .wrapper ul').find('.active').eq(0).css('color', '#fbbd0f').parents('.realme-phone-tabs-fixed').removeClass('fixed');
+          $('.realme-phones-tabs .wrapper ul').find('.active').eq(1).css('color', '#000');
         }
       })
-      $('.realme-phones .realme-phone-tabs-fixed .wrapper ul').on('click', 'li', function () {
+      $('.realme-phone-tabs-fixed .wrapper ul').on('click', 'li', function () {
         console.log($(this).index());
         if ($(this).index() == 0) {
           document.documentElement.scrollTop = 0;
         } else if ($(this).index() == 1) {
           document.documentElement.scrollTop = 525;
-        }else if ($(this).index() == 2) {
-          document.documentElement.scrollTop = 2665;
+        } else if ($(this).index() == 2) {
+          document.documentElement.scrollTop = 997;
         }
       })
     })
