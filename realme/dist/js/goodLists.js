@@ -9,7 +9,7 @@ define(['jquery'], function ($) {
           var phone = arr[0].phone;
           for (var i = 0; i < phone.length; i++) {
             var node = $(`<li>
-              <a href="goods.html?skuId=${phone[i].skuId}" title="Buy ${phone[i].productname}">
+              <a href="goods.html?id=${phone[i].id}&skuId=${phone[i].skuId}" title="Buy ${phone[i].productname}">
                 <div class="realme-phones-image">
                   <img src="${phone[i].img}" class="pic-lazyload"
                     alt="${phone[i].productname} shopwindow">
@@ -21,10 +21,10 @@ define(['jquery'], function ($) {
             </li>`);
             $("#phones ul").append(node);
           }
-          var other = arr[0].other;
+          var other = arr[1].other;
           for (var i = 0; i < other.length; i++) {
             var node = $(`<li>
-              <a href="goods.html?skuId=${other[i].skuId}" title="Buy ${other[i].productname}">
+              <a href="goods.html?id=${other[i].id}&skuId=${other[i].skuId}" title="Buy ${other[i].productname}">
                 <div class="realme-phones-image">
                   <img src="${other[i].img}" class="pic-lazyload"
                     alt="${other[i].productname} shopwindow">
@@ -37,7 +37,7 @@ define(['jquery'], function ($) {
             $("#others ul").append(node);
           }
         },
-        error: function () {
+        error: function (error) {
           alert(error)
         }
       });

@@ -1,0 +1,67 @@
+[{
+  "id":1,
+  "skuId": 1,
+  "productname": "真我Q2 Pro 5G",
+  "configuration": "C位色 8GB+256GB",
+  "img": "https://r1.realme.net/general/20201012/1602492036109.jpg",
+  "nowPrice": 1999.0000,
+  "currencySymbol": "¥"
+}, {
+  "id":1,
+  "skuId": 2,
+  "productname": "真我Q2 5G",
+  "configuration": "冲浪蓝孩 8GB+128GB",
+  "img": "https://r1.realme.net/general/20201012/1602491886723.jpg",
+  "nowPrice": 1399.0000,
+  "currencySymbol": "¥"
+}, {
+  "id":1,
+  "skuId": 3,
+  "productname": "真我Q2i 5G",
+  "configuration": "星海蓝 4GB+128GB",
+  "img": "https://r1.realme.net/general/20201012/1602491948598.jpg",
+  "nowPrice": 1199.0000,
+  "currencySymbol": "¥"
+}, {
+  "id":1,
+  "skuId": 4,
+  "productname": "真我X7 Pro 5G",
+  "configuration": "C位色 8GB+128GB",
+  "img": "https://r1.realme.net/general/20200831/1598876768416.jpg",
+  "nowPrice": 2499.0000,
+  "currencySymbol": "¥"
+}, {
+  "id":2,
+  "skuId": 5,
+  "productname": "真我蓝牙自拍杆",
+  "configuration": "黑",
+  "img": "https://r1.realme.net/general/20201012/1602491188567.jpg",
+  "indeximg": "https://r1.realme.net/general/20201013/1602557427150.jpg",
+  "nowPrice": 109.0000,
+  "currencySymbol": "¥"
+}, {
+  "id": 2,
+  "skuId": 6,
+  "skuname": "真我「敢」纪念T恤（白）",
+  "productname": "真我「敢」纪念T恤",
+  "configuration": "白",
+  "img": "https://r1.realme.net/general/20200827/1598533583816.jpg",
+  "nowPrice": 99.0000,
+  "currencySymbol": "¥"
+}, {
+  "id": 2,
+  "skuId": 7,
+  "productname": "真我云摄像机 云台版",
+  "configuration": "白",
+  "img": "https://r1.realme.net/general/20201012/1602491386244.jpg",
+  "nowPrice": 199.0000,
+  "currencySymbol": "¥"
+}, {
+  "id": 2,
+  "skuId": 8,
+  "productname": "真我30W Dart闪充移动电源 10000mAh",
+  "configuration": "黑",
+  "img": "https://r1.realme.net/general/20201012/1602490990095.jpg",
+  "nowPrice": 199.0000,
+  "currencySymbol": "¥"
+}]

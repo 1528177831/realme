@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Steps/_Resource/Icon1+Active</title>
+    <desc>Created with Sketch.</desc>
+    <g id="07004-盲约" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="web-订单详情-已支付订单，可付尾款" transform="translate(-750.000000, -152.000000)">
+            <g id="编组-2" transform="translate(570.000000, 132.000000)">
+                <g id="Steps/Horizontal/Time-盲约" transform="translate(40.000000, 20.000000)">
+                    <g id="Steps/_Resource/TitleStep+Active-盲约" transform="translate(83.000000, 0.000000)">
+                        <g id="Steps/_Resource/Icon1+Active" transform="translate(57.000000, 0.000000)">
+                            <circle id="Oval-1-Copy-10" fill="#FFC915" fill-rule="evenodd" cx="12" cy="12" r="12"></circle>
+                            <polyline id="直线-3" stroke="#FFFFFF" stroke-width="2" points="6 10.4069602 10.4971591 15.3996804 17.9117543 8"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

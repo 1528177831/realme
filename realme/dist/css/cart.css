@@ -13,6 +13,12 @@
 .icon-option {
   background-image: url("../images/icon-option.svg"); }
 
+.radio:checked + .icon-option {
+  background-image: url("../images/icon-option-checked.svg"); }
+
+#checkall:checked + .icon-option {
+  background-image: url("../images/icon-option-checked.svg"); }
+
 .icon-cart-empty,
 .icon-less,
 .icon-plus,
@@ -100,11 +106,13 @@
   .cart .cart-checkbox {
     width: 20px;
     margin-right: 50px; }
-    .cart .cart-checkbox a {
-      display: block; }
-      .cart .cart-checkbox a .icon {
-        width: 20px;
-        height: 20px; }
+    .cart .cart-checkbox .icon {
+      width: 20px;
+      height: 20px;
+      cursor: pointer; }
+    .cart .cart-checkbox .radio,
+    .cart .cart-checkbox #checkall {
+      display: none; }
   .cart .cart-body {
     background: #fff;
     margin-bottom: 10px; }
@@ -217,3 +225,9 @@
           font-size: 16px;
           height: 44px;
           line-height: 44px; }
+        .cart .cart-footer .cart-summary .cart-summary-submit .disabled {
+          cursor: pointer;
+          pointer-events: none;
+          background: #e9e9e9;
+          color: #9b9b9b;
+          border: none; }

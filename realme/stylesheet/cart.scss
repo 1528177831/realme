@@ -18,6 +18,14 @@
   background-image: url("../images/icon-option.svg");
 }
 
+.radio:checked+.icon-option {
+  background-image: url("../images/icon-option-checked.svg");
+}
+
+#checkall:checked+.icon-option {
+  background-image: url("../images/icon-option-checked.svg");
+}
+
 .icon-cart-empty,
 .icon-less,
 .icon-plus,
@@ -136,13 +144,15 @@
     width: 20px;
     margin-right: 50px;
 
-    a {
-      display: block;
+    .icon {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
 
-      .icon {
-        width: 20px;
-        height: 20px;
-      }
+    .radio,
+    #checkall {
+      display: none;
     }
   }
 
@@ -249,14 +259,17 @@
               top: 58px;
               width: 100px;
               text-align: right;
-              a{
+
+              a {
                 display: inline-block;
-                .icon{
+
+                .icon {
                   width: 24px;
                   height: 24px;
                   opacity: 0;
                 }
-                .icon:hover{
+
+                .icon:hover {
                   opacity: 1;
                 }
               }
@@ -322,6 +335,14 @@
           font-size: 16px;
           height: 44px;
           line-height: 44px;
+        }
+
+        .disabled {
+          cursor: pointer;
+          pointer-events: none;
+          background: #e9e9e9;
+          color: #9b9b9b;
+          border: none;
         }
       }
     }

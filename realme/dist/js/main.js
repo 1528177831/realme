@@ -2,13 +2,15 @@ console.log("加载成功")
 //遵从AMD规范
 require.config({
   paths: {
-    jquery: 'jquery-1.10.1.min',
+    jquery: 'jquery-1.11.3',
     'jquery-cookie': 'jquery.cookie',
     banner: 'banner',
+    index:'index',
     index1: 'index1',
     goods: 'goods',
     goodLists:'goodLists',
-    goodList:'goodList'
+    goodList:'goodList',
+    cart:'cart'
   },
   //jquery-cookie是依赖于jquery开发
   shim: {
@@ -17,14 +19,15 @@ require.config({
   }
 })
 
-require(['banner', 'index1', 'goods' , 'goodLists','goodList'], function (banner, index1, goods, goodLists,goodList) {
+require(['banner', 'index', 'index1', 'goods' , 'goodLists','goodList', 'cart'], function (banner, index, index1, goods, goodLists, goodList, cart) {
   banner.banner();
   banner.magnify();
+  index.indexList();
   index1.index1();
   index1.navList();
   goods.goods();
   banner.scroll();
   goodLists.goodLists();
-  goodList.phoneDetail();
-  goodList.otherDetail();
+  goodList.Detail();
+  cart.goShop();
 })
