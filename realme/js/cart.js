@@ -8,7 +8,8 @@ define(['jquery', 'jquery-cookie'], function ($) {
       removeGood();
       checkAll();
       checkRadio();
-      // showNum();
+      showNum();
+      showCartNum();
       $('.goods-detail').on('click', '.btn-black', function () {
         var id = this.id;
         console.log(id);
@@ -131,15 +132,24 @@ define(['jquery', 'jquery-cookie'], function ($) {
           var isChecked = $(this).prop("checked");
           if (isChecked == true) {
             var text = $(this).closest('li').find('.cart-amount span').text().substr(1);
-            console.log(text);
-            console.log($(this).closest('li').find('.cart-amount'))
             total += Number(text);
             var num = $(this).closest('li').find('.cart-count-box label').text();
             sum += Number(num);
           }
         });
-        $('.cart .cart-footer .cart-summary-count').find('span').html(`${sum}`)
+        $('.cart .cart-footer .cart-summary-count').find('span').html(`${sum}`);
         $('.cart .cart-footer .cart-summary-amount').find('i').html(`${total}`);
+      }
+
+      function showCartNum() {
+        var sum = 0;
+        var cookieArr = JSON.parse($.cookie('goods'));
+        if (cookieArr) {
+          for (var i = 0; i < cookieArr.length; i++) {
+            sum += cookieArr[i].num;
+          }
+        }
+        $('.header #cart').find('#account-cart').html(`${sum}`);
       }
 
       function addGood() {
@@ -147,7 +157,7 @@ define(['jquery', 'jquery-cookie'], function ($) {
           var id = $(this).attr('index');
           var subtotal = subtotalSum(id);
           var cookieArr = JSON.parse($.cookie('goods'));
-          var index = cookieArr.findIndex(item=> item.id == id);
+          var index = cookieArr.findIndex(item => item.id == id);
           cookieArr[index].num++;
           if (cookieArr[index].num > 1) {
             $(this).siblings().eq(0).removeClass('disabled');
@@ -158,6 +168,7 @@ define(['jquery', 'jquery-cookie'], function ($) {
             expires: 7,
           });
           showNum();
+          showCartNum();
         })
       }
 
@@ -174,6 +185,7 @@ define(['jquery', 'jquery-cookie'], function ($) {
             expires: 7,
           })
           showNum();
+          showCartNum();
         })
       }
 
@@ -190,6 +202,7 @@ define(['jquery', 'jquery-cookie'], function ($) {
           })
           isCartNum();
           showNum();
+          showCartNum();
         })
       }
       //全选
@@ -219,14 +232,14 @@ define(['jquery', 'jquery-cookie'], function ($) {
             $('#checkall').prop('checked', false);
             showNum()
           }
-          if(this.checked){
+          if (this.checked) {
             $('.cart-summary-submit').find('.btn').removeClass('disabled')
             showNum()
-          }else if(this.checked == false){
+          } else if (this.checked == false) {
             $('.cart-summary-submit').find('.btn').removeClass('disabled')
             showNum()
           }
-          if(length==0){
+          if (length == 0) {
             $('.cart-summary-submit').find('.btn').addClass('disabled')
             showNum()
           }
