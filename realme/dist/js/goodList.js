@@ -32,6 +32,7 @@ define(['jquery'], function ($) {
             var backgroundcolor;
             var color;
             var configuration;
+            var timeEnd;
             for (var i = 0; i < arr[0].phone.length; i++) {
               if (skuId == arr[0].phone[i].skuId) {
                 overviewUri = arr[0].phone[i].overviewUri;
@@ -43,8 +44,10 @@ define(['jquery'], function ($) {
                 backgroundcolor = arr[0].phone[i].backgroundcolor;
                 color = arr[0].phone[i].color;
                 configuration = arr[0].phone[i].configuration;
+                timeEnd = arr[0].phone[i].timeEnd;
               }
             }
+            timer(timeEnd);
             for (var i = 0; i < overviewUri.length; i++) {
               var node = $(`
                     <div class="swiper-slide">
@@ -59,7 +62,7 @@ define(['jquery'], function ($) {
                       <img src="${overviewUri[i]}" alt="">
                     </div>
               `);
-              $('.bigbox .swiper-wrapper').append(node);
+              $('#bigbox .swiper-wrapper').append(node);
             }
             for (var i = 0; i < overviewUri.length; i++) {
               var node = $(`
@@ -313,7 +316,7 @@ define(['jquery'], function ($) {
             var skuName;
             var price;
             var backgroundcolor;
-            console.log(arr[1]);
+            var timeEnd;
             for (var i = 0; i < arr[1].other.length; i++) {
               if (skuId == arr[1].other[i].skuId) {
                 overviewUri = arr[1].other[i].overviewUri;
@@ -323,9 +326,10 @@ define(['jquery'], function ($) {
                 skuName = arr[1].other[i].skuName;
                 price = arr[1].other[i].price;
                 backgroundcolor = arr[1].other[i].backgroundcolor;
-                time = arr[1].other[i]
+                timeEnd = arr[1].other[i].timeEnd;
               }
             }
+            timer(timeEnd);
             for (var i = 0; i < overviewUri.length; i++) {
               var node = $(`
                     <div class="swiper-slide">
@@ -374,17 +378,17 @@ define(['jquery'], function ($) {
                 <div class="countdown-time">
                   <span>距离结束还剩:</span>
                   <div class="countdown-detail">
-                    <span class="countdown-day">5 天</span>
+                    <span class="countdown-day">0 天</span>
                     <div class="countdown-hms">
-                      <span class="opensans-semibold">07</span>
+                      <span class="opensans-semibold">00</span>
                       :
                     </div>
                     <div class="countdown-hms">
-                      <span class="opensans-semibold">02</span>
+                      <span class="opensans-semibold">00</span>
                       :
                     </div>
                     <div class="countdown-hms">
-                      <span class="opensans-semibold">49</span>
+                      <span class="opensans-semibold">00</span>
                     </div>
                   </div>
                 </div>
@@ -578,22 +582,46 @@ define(['jquery'], function ($) {
       //倒计时
       function timer(intDiff) {
         window.setInterval(function () {
-          var day = 0,
-            hour = 0,
-            minute = 0,
-            second = 0; //时间默认值        
-          if (intDiff > 0) {
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+          var date = new Date();
+          if (intDiff < date.getTime()) {
+            var days = 0;
+            var hours = 0;
+            hours = '0' + hours;
+            var minutes = 0;
+            minutes = '0' + minutes;
+            var seconds = 0;
+            seconds = '0' + seconds;
+          } else {
+            var da = Math.floor((intDiff - date) / 1000);
+            if (da <= 0) {
+              clearInterval(dsq);
+            }
+            var days = Math.floor(da / (60 * 60 * 24));
+            var hours = Math.floor(da / (60 * 60)) - (days * 24);
+            if (hours < 10) {
+              hours = '0' + hours;
+            }
+            var minutes = Math.floor(da / 60) - (days * 24 * 60) - (hours * 60);
+            if (minutes < 10) {
+              minutes = '0' + minutes;
+            }
+            var seconds = Math.floor(da) - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
+            if (seconds < 10) {
+              seconds = '0' + seconds;
+            }
           }
-          if (minute <= 9) minute = '0' + minute;
-          if (second <= 9) second = '0' + second;
-          $('#day_show').html(day + "天");
-          $('#hour_show').html('<s id="h"></s>' + hour + '时');
-          $('#minute_show').html('<s></s>' + minute + '分');
-          $('#second_show').html('<s></s>' + second + '秒');
+          $('.countdown-detail').html($(`<span class="countdown-day">${days} 天</span>
+                    <div class="countdown-hms">
+                      <span class="opensans-semibold">${hours}</span>
+                      :
+                    </div>
+                    <div class="countdown-hms">
+                      <span class="opensans-semibold">${minutes}</span>
+                      :
+                    </div>
+                    <div class="countdown-hms">
+                      <span class="opensans-semibold">${seconds}</span>
+                    </div>`))
           intDiff--;
         }, 1000);
       }

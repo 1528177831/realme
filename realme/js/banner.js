@@ -135,9 +135,8 @@ define(['jquery'], function ($) {
       var oContainer = $('#app').find('#swiper-container-magnify');
       var oWrapper = $('#app').find('.swiper-wrapper');
       var oMark = $('#app').find('#mark');
-      var oSlide = $('#app .swiper-wrapper').find('.swiper-slide');
-      var oBigImg = $('.bigbox').find('.swiper-wrapper');
-      var oBigbox = $('.bigbox');
+      var oBigImg = $('#bigbox').find('.swiper-wrapper');
+      var oBigbox = $('#bigbox');
       var iNow = 1;
       var oBar = $('#app').find('.swiper-bar');
       $('#app').on('click', '.swiper-thumb', function (e) {
@@ -161,7 +160,7 @@ define(['jquery'], function ($) {
         })
       }
 
-      function moveMark() {
+      function moveMark(iNow) {
         oContainer.mouseenter(function () {
           oMark.show();
           oBigbox.show();
@@ -169,8 +168,9 @@ define(['jquery'], function ($) {
           oMark.hide();
           oBigbox.hide();
         }).mousemove(function (ev) {
+          console.log(ev.pageX);
           var l = ev.pageX - $(this).offset().left - 75;
-          if (l <= 40) {
+          if (l <= 40+(iNow*540)) {
             l = 40;
           }
           if (l >= 350) {
@@ -187,7 +187,7 @@ define(['jquery'], function ($) {
             left: l,
             top: t
           })
-          oBigImg.css({
+          $("#imgbox").css({
             left: -2 * l,
             top: -2 * t
           })

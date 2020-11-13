@@ -132,13 +132,11 @@ define(['jquery', 'jquery-cookie'], function ($) {
           if (isChecked == true) {
             var text = $(this).closest('li').find('.cart-amount span').text().substr(2);
             console.log(text);
-            total+=Number(text);
+            total += Number(text);
             var num = $(this).closest('li').find('.cart-count-box label').text();
-            sum+=Number(num);
+            sum += Number(num);
           }
         });
-        console.log(sum);
-        console.log(total);
         $('.cart .cart-footer .cart-summary-count').find('span').html(`${sum}`)
         $('.cart .cart-footer .cart-summary-amount').find('i').html(`${total}`);
       }
@@ -217,6 +215,14 @@ define(['jquery', 'jquery-cookie'], function ($) {
             $('#checkall').prop('checked', true);
           } else {
             $('#checkall').prop('checked', false);
+          }
+          if(this.checked){
+            $('.cart-summary-submit').find('.btn').removeClass('disabled')
+          }else if(this.checked == false){
+            $('.cart-summary-submit').find('.btn').removeClass('disabled')
+          }
+          if(length==0){
+            $('.cart-summary-submit').find('.btn').addClass('disabled')
           }
           showNum();
         })
