@@ -713,7 +713,8 @@ a.disabled {
   position: fixed;
   top: 100px;
   left: 50%;
-  z-index: 9; }
+  z-index: 9;
+  display: none; }
   #bigbox #imgbox {
     width: 300px;
     height: 300px;

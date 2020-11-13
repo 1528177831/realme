@@ -5,7 +5,8 @@
 body {
   padding: 44px 0 0;
   font-family: "微软雅黑";
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  user-select: none; }
 
 a {
   color: #000;

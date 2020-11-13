@@ -146,7 +146,6 @@ define(['jquery', 'jquery-cookie'], function ($) {
           var id = $(this).attr('index');
           var subtotal = subtotalSum(id);
           var cookieArr = JSON.parse($.cookie('goods'));
-          console.log(cookieArr);
           var index = cookieArr.findIndex(function (item) {
             return item.id === id;
           })

@@ -10,7 +10,8 @@ require.config({
     goods: 'goods',
     goodLists:'goodLists',
     goodList:'goodList',
-    cart:'cart'
+    cart:'cart',
+    login:'login'
   },
   //jquery-cookie是依赖于jquery开发
   shim: {
@@ -19,7 +20,7 @@ require.config({
   }
 })
 
-require(['banner', 'index', 'index1', 'goods' , 'goodLists','goodList', 'cart'], function (banner, index, index1, goods, goodLists, goodList, cart) {
+require(['banner', 'index', 'index1', 'goods' , 'goodLists','goodList', 'cart','login'], function (banner, index, index1, goods, goodLists, goodList, cart,login) {
   banner.banner();
   banner.magnify();
   index.indexList();
@@ -30,4 +31,5 @@ require(['banner', 'index', 'index1', 'goods' , 'goodLists','goodList', 'cart'],
   goodLists.goodLists();
   goodList.Detail();
   cart.goShop();
+  login.login();
 })

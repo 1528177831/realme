@@ -1,7 +1,8 @@
 html,
 body,
 #id {
-  height: 100%; }
+  height: 100%;
+  user-select: none; }
 
 input,
 textarea {
