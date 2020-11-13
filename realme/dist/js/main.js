@@ -31,5 +31,5 @@ require(['banner', 'index', 'index1', 'goods' , 'goodLists','goodList', 'cart','
   goodLists.goodLists();
   goodList.Detail();
   cart.goShop();
-  login.login();
+  login.loginStyle();
 })

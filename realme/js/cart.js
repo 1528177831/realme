@@ -8,7 +8,7 @@ define(['jquery', 'jquery-cookie'], function ($) {
       removeGood();
       checkAll();
       checkRadio();
-      showNum();
+      // showNum();
       $('.goods-detail').on('click', '.btn-black', function () {
         var id = this.id;
         console.log(id);
@@ -130,8 +130,9 @@ define(['jquery', 'jquery-cookie'], function ($) {
         $(".radio").each(function () {
           var isChecked = $(this).prop("checked");
           if (isChecked == true) {
-            var text = $(this).closest('li').find('.cart-amount span').text().substr(2);
+            var text = $(this).closest('li').find('.cart-amount span').text().substr(1);
             console.log(text);
+            console.log($(this).closest('li').find('.cart-amount'))
             total += Number(text);
             var num = $(this).closest('li').find('.cart-count-box label').text();
             sum += Number(num);
@@ -146,18 +147,17 @@ define(['jquery', 'jquery-cookie'], function ($) {
           var id = $(this).attr('index');
           var subtotal = subtotalSum(id);
           var cookieArr = JSON.parse($.cookie('goods'));
-          var index = cookieArr.findIndex(function (item) {
-            return item.id === id;
-          })
+          var index = cookieArr.findIndex(item=> item.id == id);
           cookieArr[index].num++;
           if (cookieArr[index].num > 1) {
             $(this).siblings().eq(0).removeClass('disabled');
           }
           $(this).closest('li').find('.cart-count-box label').html(cookieArr[index].num);
-          $(this).closest('li').find('.cart-amount').html(`${subtotal.currencySymbol +' '+(subtotal.nowPrice * cookieArr[index].num)}`);
+          $(this).closest('li').find('.cart-amount span').html(`${subtotal.currencySymbol +' '+(subtotal.nowPrice * cookieArr[index].num)}`);
           $.cookie('goods', JSON.stringify(cookieArr), {
             expires: 7,
-          })
+          });
+          showNum();
         })
       }
 
@@ -169,10 +169,11 @@ define(['jquery', 'jquery-cookie'], function ($) {
           var index = cookieArr.findIndex(item => item.id == id);
           cookieArr[index].num == 1 ? $('.icon-less').addClass('disabled') : cookieArr[index].num--;
           $(this).closest('li').find('.cart-count-box label').html(cookieArr[index].num);
-          $(this).closest('li').find('.cart-amount').html(`${subtotal.currencySymbol +' '+(subtotal.nowPrice * cookieArr[index].num)}`);
+          $(this).closest('li').find('.cart-amount span').html(`${subtotal.currencySymbol +' '+(subtotal.nowPrice * cookieArr[index].num)}`);
           $.cookie('goods', JSON.stringify(cookieArr), {
             expires: 7,
           })
+          showNum();
         })
       }
 
@@ -188,6 +189,7 @@ define(['jquery', 'jquery-cookie'], function ($) {
             expires: 7
           })
           isCartNum();
+          showNum();
         })
       }
       //全选
@@ -212,18 +214,22 @@ define(['jquery', 'jquery-cookie'], function ($) {
           var length = $('.radio:checked').length;
           if (len == length) {
             $('#checkall').prop('checked', true);
+            showNum()
           } else {
             $('#checkall').prop('checked', false);
+            showNum()
           }
           if(this.checked){
             $('.cart-summary-submit').find('.btn').removeClass('disabled')
+            showNum()
           }else if(this.checked == false){
             $('.cart-summary-submit').find('.btn').removeClass('disabled')
+            showNum()
           }
           if(length==0){
             $('.cart-summary-submit').find('.btn').addClass('disabled')
+            showNum()
           }
-          showNum();
         })
       }
       //获得当前的小计

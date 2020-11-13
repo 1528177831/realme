@@ -215,7 +215,6 @@ a {
             display: none;
 
             .input_code.disabled {
-              cursor: not-allowed;
               background-color: #e9e9e9;
               border-color: #e9e9e9;
               color: #9b9b9b;
@@ -223,10 +222,8 @@ a {
             }
 
             .input_code {
-              border: 1px solid #2ad181;
               border-radius: 9px;
               box-sizing: border-box;
-              color: #fff;
               cursor: pointer;
               flex-shrink: 0;
               font-size: 12px;
@@ -238,6 +235,7 @@ a {
               text-align: center;
               transition: .1s;
               width: auto;
+              background-color: #ffc915;
             }
           }
 
