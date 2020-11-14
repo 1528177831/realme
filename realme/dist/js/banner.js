@@ -168,7 +168,6 @@ define(['jquery'], function ($) {
           oMark.hide();
           oBigbox.hide();
         }).mousemove(function (ev) {
-          console.log(ev.pageX);
           var l = ev.pageX - $(this).offset().left - 75;
           if (l <= 40+(iNow*540)) {
             l = 40;

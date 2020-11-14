@@ -343,7 +343,7 @@ define(['jquery'], function ($) {
                       <img src="${overviewUri[i]}" alt="">
                     </div>
               `);
-            $('.bigbox .swiper-wrapper').append(node);
+            $('#bigbox .swiper-wrapper').append(node);
           }
           for (var i = 0; i < overviewUri.length; i++) {
             var node = $(`
