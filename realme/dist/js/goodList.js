@@ -1,84 +1,83 @@
 define(['jquery'], function ($) {
   function Detail() {
-    $(function () {
-      //获取url中的参数
-      function getUrlParam(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-        var r = window.location.search.substr(1).match(reg); //匹配目标参数
-        if (r != null) return unescape(r[2]);
-        return null; //返回参数值
-      }
-      //接收URL中的参数skuId
-      var id = getUrlParam('id');
-      var skuId = getUrlParam('skuId');
-      if (id == 1) {
-        phoneDetail(skuId)
-      } else if (id == 2) {
-        otherDetail(skuId)
-      }
+    //获取url中的参数
+    function getUrlParam(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+      var r = window.location.search.substr(1).match(reg); //匹配目标参数
+      if (r != null) return unescape(r[2]);
+      return null; //返回参数值
+    }
+    //接收URL中的参数skuId
+    var id = getUrlParam('id');
+    var skuId = getUrlParam('skuId');
+    if (id == 1) {
+      phoneDetail(skuId)
+    } else if (id == 2) {
+      otherDetail(skuId)
+    }
 
-      function phoneDetail(skuId) {
-        $.ajax({
-          type: 'get',
-          url: 'data/accessories.json',
-          dataType: 'json',
-          success: function (arr) {
-            var overviewUri = [];
-            var webOverview = [];
-            var productName;
-            var attrVal;
-            var skuName;
-            var price;
-            var backgroundcolor;
-            var color;
-            var configuration;
-            var timeEnd;
-            for (var i = 0; i < arr[0].phone.length; i++) {
-              if (skuId == arr[0].phone[i].skuId) {
-                overviewUri = arr[0].phone[i].overviewUri;
-                webOverview = arr[0].phone[i].webOverview;
-                productName = arr[0].phone[i].productName;
-                attrVal = arr[0].phone[i].attrVal;
-                skuName = arr[0].phone[i].skuName;
-                price = arr[0].phone[i].price;
-                backgroundcolor = arr[0].phone[i].backgroundcolor;
-                color = arr[0].phone[i].color;
-                configuration = arr[0].phone[i].configuration;
-                timeEnd = arr[0].phone[i].timeEnd;
-              }
+    function phoneDetail(skuId) {
+      $.ajax({
+        type: 'get',
+        url: 'data/accessories.json',
+        dataType: 'json',
+        success: function (arr) {
+          var overviewUri = [];
+          var webOverview = [];
+          var productName;
+          var attrVal;
+          var skuName;
+          var price;
+          var backgroundcolor;
+          var color;
+          var configuration;
+          var timeEnd;
+          for (var i = 0; i < arr[0].phone.length; i++) {
+            if (skuId == arr[0].phone[i].skuId) {
+              overviewUri = arr[0].phone[i].overviewUri;
+              webOverview = arr[0].phone[i].webOverview;
+              productName = arr[0].phone[i].productName;
+              attrVal = arr[0].phone[i].attrVal;
+              skuName = arr[0].phone[i].skuName;
+              price = arr[0].phone[i].price;
+              backgroundcolor = arr[0].phone[i].backgroundcolor;
+              color = arr[0].phone[i].color;
+              configuration = arr[0].phone[i].configuration;
+              timeEnd = arr[0].phone[i].timeEnd;
             }
-            timer(timeEnd);
-            for (var i = 0; i < overviewUri.length; i++) {
-              var node = $(`
+          }
+          timer(timeEnd);
+          for (var i = 0; i < overviewUri.length; i++) {
+            var node = $(`
                     <div class="swiper-slide">
                       <img src="${overviewUri[i]}" alt="">
                     </div>
               `);
-              $('#swiper-container-magnify .swiper-wrapper').append(node);
-            }
-            for (var i = 0; i < overviewUri.length; i++) {
-              var node = $(`
+            $('#swiper-container-magnify .swiper-wrapper').append(node);
+          }
+          for (var i = 0; i < overviewUri.length; i++) {
+            var node = $(`
                     <div class="swiper-slide">
                       <img src="${overviewUri[i]}" alt="">
                     </div>
               `);
-              $('#bigbox .swiper-wrapper').append(node);
-            }
-            for (var i = 0; i < overviewUri.length; i++) {
-              var node = $(`
+            $('#bigbox .swiper-wrapper').append(node);
+          }
+          for (var i = 0; i < overviewUri.length; i++) {
+            var node = $(`
                     <div class="swiper-thumb">
                       <img src="${overviewUri[i]}" alt="">
                     </div>
               `);
-              $('.swiper-thumbs').append(node);
-            }
-            for (var i = 0; i < webOverview.length; i++) {
-              var node = $(`<img src="${webOverview[i]}" alt="">`);
-              $('.goods-overview .wrapper').append(node);
-            }
-            var node = $(`<span class="goods-product-name">${productName}</span>`);
-            $('.nav-title').append(node);
-            var node = $(`<div class="goods-basic">
+            $('.swiper-thumbs').append(node);
+          }
+          for (var i = 0; i < webOverview.length; i++) {
+            var node = $(`<img src="${webOverview[i]}" alt="">`);
+            $('.goods-overview .wrapper').append(node);
+          }
+          var node = $(`<span class="goods-product-name">${productName}</span>`);
+          $('.nav-title').append(node);
+          var node = $(`<div class="goods-basic">
             <h1 class="goods-title">
               <span class="goods-product-name">${productName}</span>
               <span class="brackets">（</span>
@@ -277,8 +276,8 @@ define(['jquery'], function ($) {
           </div>
         </div>
       </div>`)
-            $('.goods-detail').append(node);
-            var node = $(`<div class="wrapper">
+          $('.goods-detail').append(node);
+          var node = $(`<div class="wrapper">
         <div class="sticky-container">
           <div class="category-left">
             <img src="${overviewUri[0]}" alt="">
@@ -298,69 +297,69 @@ define(['jquery'], function ($) {
           </div>
         </div>
       </div>`);
-            $('.sticky-header').append(node);
-          }
-        })
-      }
+          $('.sticky-header').append(node);
+        }
+      })
+    }
 
-      function otherDetail(skuId) {
-        $.ajax({
-          type: 'get',
-          url: 'data/accessories.json',
-          dataType: 'json',
-          success: function (arr) {
-            var overviewUri = [];
-            var webOverview = [];
-            var productName;
-            var attrVal;
-            var skuName;
-            var price;
-            var backgroundcolor;
-            var timeEnd;
-            for (var i = 0; i < arr[1].other.length; i++) {
-              if (skuId == arr[1].other[i].skuId) {
-                overviewUri = arr[1].other[i].overviewUri;
-                webOverview = arr[1].other[i].webOverview;
-                productName = arr[1].other[i].productName;
-                attrVal = arr[1].other[i].attrVal;
-                skuName = arr[1].other[i].skuName;
-                price = arr[1].other[i].price;
-                backgroundcolor = arr[1].other[i].backgroundcolor;
-                timeEnd = arr[1].other[i].timeEnd;
-              }
+    function otherDetail(skuId) {
+      $.ajax({
+        type: 'get',
+        url: 'data/accessories.json',
+        dataType: 'json',
+        success: function (arr) {
+          var overviewUri = [];
+          var webOverview = [];
+          var productName;
+          var attrVal;
+          var skuName;
+          var price;
+          var backgroundcolor;
+          var timeEnd;
+          for (var i = 0; i < arr[1].other.length; i++) {
+            if (skuId == arr[1].other[i].skuId) {
+              overviewUri = arr[1].other[i].overviewUri;
+              webOverview = arr[1].other[i].webOverview;
+              productName = arr[1].other[i].productName;
+              attrVal = arr[1].other[i].attrVal;
+              skuName = arr[1].other[i].skuName;
+              price = arr[1].other[i].price;
+              backgroundcolor = arr[1].other[i].backgroundcolor;
+              timeEnd = arr[1].other[i].timeEnd;
             }
-            timer(timeEnd);
-            for (var i = 0; i < overviewUri.length; i++) {
-              var node = $(`
+          }
+          timer(timeEnd);
+          for (var i = 0; i < overviewUri.length; i++) {
+            var node = $(`
                     <div class="swiper-slide">
                       <img src="${overviewUri[i]}" alt="">
                     </div>
               `);
-              $('#swiper-container-magnify .swiper-wrapper').append(node);
-            }
-            for (var i = 0; i < overviewUri.length; i++) {
-              var node = $(`
+            $('#swiper-container-magnify .swiper-wrapper').append(node);
+          }
+          for (var i = 0; i < overviewUri.length; i++) {
+            var node = $(`
                     <div class="swiper-slide">
                       <img src="${overviewUri[i]}" alt="">
                     </div>
               `);
-              $('.bigbox .swiper-wrapper').append(node);
-            }
-            for (var i = 0; i < overviewUri.length; i++) {
-              var node = $(`
+            $('.bigbox .swiper-wrapper').append(node);
+          }
+          for (var i = 0; i < overviewUri.length; i++) {
+            var node = $(`
                     <div class="swiper-thumb">
                       <img src="${overviewUri[i]}" alt="">
                     </div>
               `);
-              $('.swiper-thumbs').append(node);
-            }
-            for (var i = 0; i < webOverview.length; i++) {
-              var node = $(`<img src="${webOverview[i]}" alt="">`);
-              $('.goods-overview .wrapper').append(node);
-            }
-            var node = $(`<span class="goods-product-name">${productName}</span>`);
-            $('.nav-title').append(node);
-            var node = $(`<div class="goods-basic">
+            $('.swiper-thumbs').append(node);
+          }
+          for (var i = 0; i < webOverview.length; i++) {
+            var node = $(`<img src="${webOverview[i]}" alt="">`);
+            $('.goods-overview .wrapper').append(node);
+          }
+          var node = $(`<span class="goods-product-name">${productName}</span>`);
+          $('.nav-title').append(node);
+          var node = $(`<div class="goods-basic">
             <h1 class="goods-title">
               <span class="goods-product-name">${productName}</span>
               <span class="brackets">（</span>
@@ -553,8 +552,8 @@ define(['jquery'], function ($) {
           </div>
         </div>
       </div>`)
-            $('.goods-detail').append(node);
-            var node = $(`<div class="wrapper">
+          $('.goods-detail').append(node);
+          var node = $(`<div class="wrapper">
         <div class="sticky-container">
           <div class="category-left">
             <img src="${overviewUri[0]}" alt="">
@@ -574,43 +573,43 @@ define(['jquery'], function ($) {
           </div>
         </div>
       </div>`);
-            $('.sticky-header').append(node);
-          }
-        })
-      }
+          $('.sticky-header').append(node);
+        }
+      })
+    }
 
-      //倒计时
-      function timer(intDiff) {
-        window.setInterval(function () {
-          var date = new Date();
-          if (intDiff < date.getTime()) {
-            var days = 0;
-            var hours = 0;
-            hours = '0' + hours;
-            var minutes = 0;
-            minutes = '0' + minutes;
-            var seconds = 0;
-            seconds = '0' + seconds;
-          } else {
-            var da = Math.floor((intDiff - date) / 1000);
-            if (da <= 0) {
-              clearInterval(dsq);
-            }
-            var days = Math.floor(da / (60 * 60 * 24));
-            var hours = Math.floor(da / (60 * 60)) - (days * 24);
-            if (hours < 10) {
-              hours = '0' + hours;
-            }
-            var minutes = Math.floor(da / 60) - (days * 24 * 60) - (hours * 60);
-            if (minutes < 10) {
-              minutes = '0' + minutes;
-            }
-            var seconds = Math.floor(da) - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
-            if (seconds < 10) {
-              seconds = '0' + seconds;
-            }
+    //倒计时
+    function timer(intDiff) {
+      window.setInterval(function () {
+        var date = new Date();
+        if (intDiff < date.getTime()) {
+          var days = 0;
+          var hours = 0;
+          hours = '0' + hours;
+          var minutes = 0;
+          minutes = '0' + minutes;
+          var seconds = 0;
+          seconds = '0' + seconds;
+        } else {
+          var da = Math.floor((intDiff - date) / 1000);
+          if (da <= 0) {
+            clearInterval(dsq);
           }
-          $('.countdown-detail').html($(`<span class="countdown-day">${days} 天</span>
+          var days = Math.floor(da / (60 * 60 * 24));
+          var hours = Math.floor(da / (60 * 60)) - (days * 24);
+          if (hours < 10) {
+            hours = '0' + hours;
+          }
+          var minutes = Math.floor(da / 60) - (days * 24 * 60) - (hours * 60);
+          if (minutes < 10) {
+            minutes = '0' + minutes;
+          }
+          var seconds = Math.floor(da) - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
+          if (seconds < 10) {
+            seconds = '0' + seconds;
+          }
+        }
+        $('.countdown-detail').html($(`<span class="countdown-day">${days} 天</span>
                     <div class="countdown-hms">
                       <span class="opensans-semibold">${hours}</span>
                       :
@@ -622,10 +621,9 @@ define(['jquery'], function ($) {
                     <div class="countdown-hms">
                       <span class="opensans-semibold">${seconds}</span>
                     </div>`))
-          intDiff--;
-        }, 1000);
-      }
-    })
+        intDiff--;
+      }, 1000);
+    }
   }
   return {
     Detail

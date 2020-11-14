@@ -11,7 +11,6 @@ require.config({
     goodLists:'goodLists',
     goodList:'goodList',
     cart:'cart',
-    login:'login'
   },
   //jquery-cookie是依赖于jquery开发
   shim: {
@@ -20,13 +19,11 @@ require.config({
   }
 })
 
-require(['banner', 'index', 'index1', 'goods' , 'goodLists','goodList', 'cart','login'], function (banner, index, index1, goods, goodLists, goodList, cart,login) {
-  banner.banner();
-  index.indexList();
+require(['banner', 'index1', 'goodLists','goodList'], function (banner, index1, goodLists, goodList) {
+  
+  banner.scroll();
   index1.index1();
   index1.navList();
-  goods.goods();
   goodLists.goodLists();
   goodList.Detail();
-  cart.showCartNum();
 })

@@ -22,14 +22,11 @@ require.config({
 
 require(['banner', 'index', 'index1', 'goods' , 'goodLists','goodList', 'cart','login'], function (banner, index, index1, goods, goodLists, goodList, cart,login) {
   banner.banner();
-  banner.magnify();
   index.indexList();
   index1.index1();
   index1.navList();
   goods.goods();
-  banner.scroll();
   goodLists.goodLists();
   goodList.Detail();
-  cart.goShop();
-  login.login();
+  cart.showCartNum();
 })
